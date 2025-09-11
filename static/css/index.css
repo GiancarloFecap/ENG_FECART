@@ -1,0 +1,14 @@
+header{
+    background-color: black;
+}
+
+.cb{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    
+}
+
+.title{
+    color: red;
+}
