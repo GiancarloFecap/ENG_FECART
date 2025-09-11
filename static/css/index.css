@@ -1,6 +1,10 @@
+body{
+    background-color: rgb(54, 53, 53);
+}
+
 header{
     background-color: black;
-    height: 150px;
+    height: 155px;
 }
 
 .itens{
@@ -29,17 +33,27 @@ header{
 /*MOVIES*/
 
 .catalog{
+    margin-top: 40px;
     display: flex;
-    align-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 30px;
-    padding-left: 15px;
+   gap: 40px;
 }
 
 .movie{
-    width: 200px;
-    height: 400px;
     display: flex;
-    padding-inline: 40px;
-    gap: 40px;
+    justify-content: center;
+    gap: 100px;
+}
+
+img{
+    width: 225px;
+    height: 400px;
+}
+
+
+/*Footer*/
+.c{
+    color: white;
+    font-size: medium;
 }
