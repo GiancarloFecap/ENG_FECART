@@ -1,14 +1,45 @@
 header{
     background-color: black;
+    height: 150px;
 }
 
-.cb{
+.itens{
     justify-content: center;
     align-items: center;
     display: flex;
-    
+    font-size: larger;
 }
 
+.web{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 50px;
+}
+
+.web_a{
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
 .title{
     color: red;
+}
+
+/*MOVIES*/
+
+.catalog{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: 30px;
+    padding-left: 15px;
+}
+
+.movie{
+    width: 200px;
+    height: 400px;
+    display: flex;
+    padding-inline: 40px;
+    gap: 40px;
 }

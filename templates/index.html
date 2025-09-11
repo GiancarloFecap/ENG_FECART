@@ -4,24 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StarCine</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
     <header>
+        <hr>
         <div class='cb'>
             <div class="itens">
                 <h1 class="title">StarCine</h1>
-                <div class="">
-                    <p></p>
-                </div>
             </div>
-
+            <div class="web">
+                <a href="/" class="web_a">Movies</a>
+                <a href="/teste" class="web_a">Teste</a>
+            </div>
         </div>
         <hr>
     </header>
 
-    <footer>
+    <div class="catalog">
+        <div class="movie">
+            <img src="{{url_for('static', filename='img/the_dark_knight.jpg')}}" alt="the_dark_knight">
+            <img src="{{url_for('static', filename='img/the_dark_knight.jpg')}}" alt="the_dark_knight">
+            <img src="{{url_for('static', filename='img/the_dark_knight.jpg')}}" alt="the_dark_knight">
+            <img src="{{url_for('static', filename='img/the_dark_knight.jpg')}}" alt="the_dark_knight">
+        </div>
+    </div>
 
+    <hr>
+    <footer>
+        &copy;Fecap2025
     </footer>
 </body>
 </html>
