@@ -9,11 +9,16 @@
 <body>
     <header>
         <hr>
+
+        <!--CABEÇALHO-->
         <div class='cb'>
+                <!--OBJETOS-->
             <div class="itens">
                 <h1 class="title">StarCine</h1>
             </div>
+
             <hr>
+                <!--HIPER-LINKS-->
             <div class="web">
                 <a href="/teste" class="web_a">Teste</a>
                 <a href="/teste" class="web_a">Teste</a>
@@ -21,11 +26,16 @@
                 <a href="/teste" class="web_a">Teste</a>
                 <a href="/teste" class="web_a">Teste</a>
             </div>
+
         </div>
+
         <hr>
     </header>
 
+    <!--CATALOGO DE FILMES-->
     <div class="catalog">
+
+        <!--FILMES-->
         <div class="movie">
 
             <div class="box">
@@ -55,9 +65,11 @@
                     <p>MATRIX</p>
                 </div>
             </div>
+
         </div>
 
         <div class="movie">
+
             <div class="box">
                 <div class="content">
                     <img src="{{url_for('static', filename='img/pulp_fiction.jpg')}}" alt="pulp_fiction">
@@ -82,9 +94,10 @@
             <div class="box">
                 <div class="content">
                     <img src="{{url_for('static', filename='img/jaws.jpg')}}" alt="jaws">
-                    <p>TJAWS</p>
+                    <p>JAWS</p>
                 </div>
             </div>
+
         </div>
 
         <div class="movie">
@@ -115,6 +128,7 @@
                     <p>CASABLANCA</p>
                 </div>
             </div>
+
         </div>
 
         <div class="movie">
@@ -145,21 +159,29 @@
                     <p>STAR WARS</p>
                 </div>
             </div>
-    </div>
+
+        </div>
     
     <div class="movie">
         <div class="box">
-           <div div="content">
+           <div class="content">
                 <img src="{{url_for('static', filename='img/the_birth_of_a_nation.jpg')}}" alt="the_birth_of_a_nation">
                 <p>THE BIRTH OF A NATION</p>
            </div>
        </div>
    </div>
+
+   <!--FINALIZAÇÃO DO CATÁLOGO-->
 </div>
 
     <hr>
+
+    <!--RODAPÉ-->
     <footer>
        <p class="c">&copy;Fecap2025</p>
     </footer>
+
+
 </body>
+
 </html>
