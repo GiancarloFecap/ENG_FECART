@@ -6,6 +6,42 @@
     <title>StarCine</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const modal = document.getElementById("movieModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalImage = document.getElementById("modalImage");
+        const modalDesc = document.getElementById("modalDesc");
+        const spanClose = document.querySelector(".close");
+    
+        // Seleciona todos os box de filmes
+        document.querySelectorAll(".box").forEach(box => {
+            box.addEventListener("click", () => {
+                const title = box.querySelector("p").innerText;
+                const imgSrc = box.querySelector("img").src;
+                const desc = box.querySelector(".content").dataset.desc; // pega a descrição do atributo data-desc
+    
+                modalTitle.innerText = title;
+                modalImage.src = imgSrc;
+                modalDesc.innerText = desc;
+    
+                modal.style.display = "flex";
+            });
+        });
+    
+        // Fechar modal
+        spanClose.onclick = () => modal.style.display = "none";
+    
+        // Fecha ao clicar fora do conteúdo
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    });
+    </script>
+
 <body>
     <header>
         <hr>
@@ -39,28 +75,32 @@
         <div class="movie">
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="The Dark Knight (2008)
+                Christopher Nolan’s gripping superhero film where Batman faces the chaotic Joker, combining action, moral dilemmas, and Heath Ledger’s unforgettable performance.">
                     <img src="{{url_for('static', filename='img/the_dark_knight.jpg')}}" alt="the_dark_knight">
                     <p>THE DARK KNIGHT</p>
                 </div>
             </div>
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="The Godfather (1972)
+                Francis Ford Coppola’s mafia masterpiece chronicling the Corleone family’s rise to power, blending crime, loyalty, and family in one of the greatest films ever made.">
                     <img src="{{url_for('static', filename='img/The_Godfather.webp')}}" alt="The_Godfather">
                     <p>THE GODFATHER</p>
                 </div>
             </div>
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="Toy Story (1995)
+                Pixar’s groundbreaking first fully computer-animated feature, telling a heartfelt story of friendship and rivalry between Woody, Buzz Lightyear, and the world of toys.">
                     <img src="{{url_for('static', filename='img/Toy_story.webp')}}" alt="Toy_story">
                     <p>TOY STORY</p>
                 </div>
             </div>
             
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="The Matrix (1999)
+                A visionary sci-fi action film that redefined the genre, blending philosophy and cyberpunk aesthetics as Neo discovers the truth behind reality and the machines.">
                     <img src="{{url_for('static', filename='img/The_Matrix.png')}}" alt="The_Matrix">
                     <p>MATRIX</p>
                 </div>
@@ -71,28 +111,32 @@
         <div class="movie">
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="Pulp Fiction (1994)
+                Quentin Tarantino’s stylish crime anthology, weaving interconnected stories of gangsters, hitmen, and misfits, marked by witty dialogue, nonlinear narrative, and iconic moments.">
                     <img src="{{url_for('static', filename='img/pulp_fiction.jpg')}}" alt="pulp_fiction">
                     <p>PULP FICTION</p>
                 </div>
             </div>
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="Snow White and the Seven Dwarfs (1937)
+                Disney’s first full-length animated feature, a fairy-tale classic that set the standard for animation with its groundbreaking artistry and timeless charm.">
                     <img src="{{url_for('static', filename='img/snow_white_and_the_seven_dwarfs.jpg')}}" alt="snow_white_and_the_seven_dwarfs">
                     <p>SNOW WHITE</p>
                 </div>
             </div>
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="Psycho (1960)
+                Alfred Hitchcock’s masterclass in suspense and horror, known for its shocking twists, Norman Bates’ chilling presence, and the unforgettable shower scene.">
                     <img src="{{url_for('static', filename='img/psycho.webp')}}" alt="psycho">
                     <p>PSYCHO</p>
                 </div>
             </div>
            
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="Jaws (1975)
+                The thriller that invented the summer blockbuster, with Steven Spielberg building terrifying suspense around a killer shark terrorizing a beach town.">
                     <img src="{{url_for('static', filename='img/jaws.jpg')}}" alt="jaws">
                     <p>JAWS</p>
                 </div>
@@ -102,28 +146,34 @@
 
         <div class="movie">
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="A Space Odyssey (1968)
+                A groundbreaking sci-fi epic by Stanley Kubrick that explores evolution, artificial intelligence, and humanity’s place in the cosmos, combining stunning visuals with philosophical depth.">
                     <img src="{{url_for('static', filename='img/a_space_odyssey.jpg')}}" alt="a_space_odyssey">
                     <p>A SPACE ODYSSEY</p>
                 </div>
             </div>
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="
+                American Pie (1999)
+                A teen comedy that became a cultural phenomenon, following a group of high school friends navigating awkward coming-of-age experiences, love, and friendship.
+                ">
                     <img src="{{url_for('static', filename='img/american_pie.jpg')}}" alt="american_pie">
                     <p>AMERICAN PIE</p>
                 </div>
             </div>
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="Avatar (2009)
+                James Cameron’s visually spectacular sci-fi adventure set on Pandora, a lush alien world, where humans clash with the Na’vi in a story blending technology, nature, and identity.">
                     <img src="{{url_for('static', filename='img/avatar.jpg')}}" alt=" avatar">
                     <p>AVATAR</p>
                 </div>
             </div>
            
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="Casablanca (1942)
+                A timeless romantic drama set during World War II, following Rick, Ilsa, and Victor in a love triangle marked by sacrifice, duty, and the haunting refrain “Here’s looking at you, kid.”">
                     <img src="{{url_for('static', filename='img/casablanca.webp')}}" alt="casablanca">
                     <p>CASABLANCA</p>
                 </div>
@@ -133,28 +183,34 @@
 
         <div class="movie">
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="E.T. the Extra-Terrestrial (1982)
+                Steven Spielberg’s heartfelt tale of friendship between a lonely boy and a stranded alien, blending wonder, innocence, and emotion in one of cinema’s most beloved stories.">
                     <img src="{{url_for('static', filename='img/et.jpg')}}" alt="et">
                     <p>E.T.</p>
                 </div>
             </div>
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="Gone with the Wind (1939)
+                A sweeping Civil War-era romance about Scarlett O’Hara’s struggle for love and survival, noted for its grandeur, cultural impact, and controversial legacy.">
                     <img src="{{url_for('static', filename='img/gone_with_the_wind.jpg')}}" alt=" gone_with_the_wind">
                     <p>GONE WITH THE WIND</p>
                 </div>
             </div>
 
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="
+                Singin’ in the Rain (1952)
+                A joyful celebration of Hollywood’s transition from silent films to talkies, filled with dazzling dance numbers, humor, and Gene Kelly’s legendary rain-soaked performance.
+                "       >
                     <img src="{{url_for('static', filename='img/singing_in_the_rain.jpg')}}" alt=" singing_in_the_rain">
                     <p>SINGIN' IN THE RAIN</p>
                 </div>
             </div>
            
             <div class="box">
-                <div class="content">
+                <div class="content" data-desc="Star Wars: A New Hope (1977)
+                George Lucas’ space opera that launched one of cinema’s greatest franchises, blending mythic storytelling, groundbreaking effects, and unforgettable characters like Luke Skywalker and Darth Vader.">
                     <img src="{{url_for('static', filename='img/star_wars_a_new_hope.jpg')}}" alt="star_wars_a_new_hope">
                     <p>STAR WARS</p>
                 </div>
@@ -164,7 +220,8 @@
     
     <div class="movie">
         <div class="box">
-           <div class="content">
+           <div class="content" data-desc="The Birth of a Nation (1915)
+            D.W. Griffith’s technically innovative yet deeply racist silent epic, both a landmark in film history and a controversial piece due to its harmful depictions.">
                 <img src="{{url_for('static', filename='img/the_birth_of_a_nation.jpg')}}" alt="the_birth_of_a_nation">
                 <p>THE BIRTH OF A NATION</p>
            </div>
@@ -181,6 +238,17 @@
        <p class="c">&copy;Fecap2025</p>
     </footer>
 
+
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+          <div class="PU-BOX">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <img id="modalImage" src="" alt="">
+            <p id="modalDesc"></p>
+          </div>
+        </div>
+      </div>
 
 </body>
 
